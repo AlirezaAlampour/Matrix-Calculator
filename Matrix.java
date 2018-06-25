@@ -31,7 +31,8 @@ public class Matrix {
      return new Matrix(IntStream.range(0,this.row).mapToObj(x->IntStream.range(0,otherMatrix.col).map(y->IntStream.range(0,this.col).map(z->this.elements[x][z]*otherMatrix.elements[z][y]).reduce(0,(a,b)->a+b)).toArray()).toArray(int[][]::new));
    }
    public Matrix HadmardProduct(Matrix otherMatrix){
-     return new Matrix(IntStream.range(0,this.row).mapToObj(x -> IntStream.range(0,otherMatrix.col).map(y -> this.elements[x][y]* otherMatrix.elements[x][y]).reduce(0,(a,b)-> a+b)).toArray()).toArray(int[][]::new));
+    return null;
+     //return new Matrix(IntStream.range(0,this.row).mapToObj(x -> IntStream.range(0,otherMatrix.col).map(y -> this.elements[x][y]* otherMatrix.elements[x][y]).reduce(0,(a,b)-> a+b)).toArray()).toArray(int[][]::new));
    }
    public String results(int[][]input){
       return Arrays.stream(input).map(x->Arrays.stream(x).mapToObj(i-> String.format("%6d",i)).reduce("\n"+"[",(a,b)->a + b)).reduce("\n",(a,b)-> a + b+"]");
